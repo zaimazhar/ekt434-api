@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 API</title>
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Rubik&family=Ubuntu" rel="stylesheet">
+    
+</head>
+<body class="bg-green-100">
+    <!-- Navbar -->
+    <div class="block bg-green-300 text-center p-5 mb-5">
+        <p class="text-3xl font-nunitosans">ZaRaAs RESTful API</p>
+    </div>
+    <div class="text-center font-rubik">
+        <p id="userCountry" class="text-3xl my-6"></p>
+        <div class="flex flex-wrap justify-center font-bold text-white mb-5">
+            <div id="get" class="bg-blue-500 p-5 m-2 cursor-pointer hover:bg-blue-800">GET</div>
+            <div id="post" class="bg-green-500 p-5 m-2 cursor-pointer hover:bg-green-800">POST</div>
+            <div id="patch" class="bg-yellow-500 p-5 m-2 cursor-pointer hover:bg-yellow-800">PATCH</div>
+            <div id="delete" class="bg-red-500 p-5 m-2 cursor-pointer hover:bg-red-800">DELETE</div>
+        </div><br>
+        <div id="display">
+            <p id="currMethod" class="text-3xl"></p><br>
+            <p id="describe" class="text-2xl"></p><br>
+            <p id="description" class="text-small mb-3"></p>
+            <input id="getInput" type="text" class="p-3 focus:outline-none rounded-md m-3"><br>
+            <button id="btnSubmit" class="bg-pink-300 py-2 px-8 rounded-md hover:bg-pink-800 transition font-semibold">Submit</button>
+        </div>
+    </div>
+    <script src="./app.js" defer></script>
+</body>
+</html>
