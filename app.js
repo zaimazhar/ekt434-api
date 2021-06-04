@@ -43,6 +43,7 @@ window.onload = async () => {
     status = 'get'
     input.value = countryUser.country
     callApi()
+    setTimeout( () => status = null, 2000)
 }
 
 getBtn.addEventListener('click', () => {
@@ -66,7 +67,7 @@ deleteBtn.addEventListener('click', () => {
 })
 
 submit.onclick = () => {
-    if(!status) describeText.innerHTML = `Choose a method`
+    if(!status) describeText('Choose a method and a country')
     if(status === 'get') {
         callApi()
     }
@@ -99,7 +100,7 @@ async function callApi() {
     displayResult.style.display = "block"
     const currCases = covidCases[covidCases.length - 1]
     const date = new Intl.DateTimeFormat('ms-MY').format(new Date(currCases.Date))
-    displayCountry.innerHTML = `<p class='text-3xl font-bold mb-2'>${input.value}</p><p class='font-bold'>${date}</p>`
+    displayCountry.innerHTML = `<p class='text-3xl font-bold mb-2 animate-word'>${input.value}</p><p class='font-bold animate-word'>${date}</p>`
     input.value = ''
     const activeCases = currCases.Active
     const confirmedCases = currCases.Confirmed
