@@ -29136,6 +29136,41 @@ video {
   }
 }
 
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(0.95);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes displayWord {
+  0% {
+    color: white;
+    font-size: 10px;
+  }
+
+  100% {
+    color: black;
+  }
+}
+
 .animate-none {
   animation: none;
 }
@@ -29154,6 +29189,22 @@ video {
 
 .animate-bounce {
   animation: bounce 1s infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 6s linear infinite;
+}
+
+.animate-scale {
+  animation: scale 3s linear infinite;
+}
+
+.animate-word {
+  animation: displayWord 1s linear;
 }
 
 .mix-blend-normal {
@@ -58365,6 +58416,22 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .sm\:animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .sm\:animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .sm\:animate-scale {
+    animation: scale 3s linear infinite;
+  }
+
+  .sm\:animate-word {
+    animation: displayWord 1s linear;
+  }
+
   .sm\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -87481,6 +87548,22 @@ video {
 
   .md\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .md\:animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .md\:animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .md\:animate-scale {
+    animation: scale 3s linear infinite;
+  }
+
+  .md\:animate-word {
+    animation: displayWord 1s linear;
   }
 
   .md\:mix-blend-normal {
@@ -116601,6 +116684,22 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .lg\:animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .lg\:animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .lg\:animate-scale {
+    animation: scale 3s linear infinite;
+  }
+
+  .lg\:animate-word {
+    animation: displayWord 1s linear;
+  }
+
   .lg\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -145719,6 +145818,22 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .xl\:animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .xl\:animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .xl\:animate-scale {
+    animation: scale 3s linear infinite;
+  }
+
+  .xl\:animate-word {
+    animation: displayWord 1s linear;
+  }
+
   .xl\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -174835,6 +174950,22 @@ video {
 
   .\32xl\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .\32xl\:animate-wiggle {
+    animation: wiggle 1s ease-in-out infinite;
+  }
+
+  .\32xl\:animate-spin-slow {
+    animation: spin 6s linear infinite;
+  }
+
+  .\32xl\:animate-scale {
+    animation: scale 3s linear infinite;
+  }
+
+  .\32xl\:animate-word {
+    animation: displayWord 1s linear;
   }
 
   .\32xl\:mix-blend-normal {

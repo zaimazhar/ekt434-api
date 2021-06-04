@@ -10,27 +10,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Rubik&family=Ubuntu" rel="stylesheet">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-green-100">
     <!-- Navbar -->
     <div class="block bg-green-300 text-center p-5 mb-5">
-        <p class="text-3xl font-nunitosans">ZaRaAs RESTful API</p>
-    </div>
-    <div class="text-center font-rubik">
-        <p id="userCountry" class="text-3xl my-6"></p>
-        <div class="flex flex-wrap justify-center font-bold text-white mb-5">
-            <div id="get" class="bg-blue-500 p-5 m-2 cursor-pointer hover:bg-blue-800">GET</div>
-            <div id="post" class="bg-green-500 p-5 m-2 cursor-pointer hover:bg-green-800">POST</div>
-            <div id="patch" class="bg-yellow-500 p-5 m-2 cursor-pointer hover:bg-yellow-800">PATCH</div>
-            <div id="delete" class="bg-red-500 p-5 m-2 cursor-pointer hover:bg-red-800">DELETE</div>
-        </div><br>
-        <div id="display">
-            <p id="currMethod" class="text-3xl"></p><br>
-            <p id="describe" class="text-2xl"></p><br>
-            <p id="description" class="text-small mb-3"></p>
-            <input id="getInput" type="text" class="p-3 focus:outline-none rounded-md m-3"><br>
-            <button id="btnSubmit" class="bg-pink-300 py-2 px-8 rounded-md hover:bg-pink-800 transition font-semibold">Submit</button>
+        <p class="font-bold text-3xl font-nunitosans">ZaRaAs RESTful API</p>
+    </div><br><br>
+    <div class="text-center">
+        <span id="userCountry" class="text-center text-2xl my-6 bg-green-300 p-10 rounded-sm shadow-xl"></span>
+    </div><br><br><br><br>
+    <div class="grid grid-cols-2 justify-items-center text-center font-rubik my-10 p-12">
+        <div id="display ">
+            <p id="displayCountry" class="text-2xl m-5"></p>
+            <div id="displayResult" class="bg-white shadow-2xl p-3 rounded-md">
+                <div id="confirmedCases" class="bg-blue-500 p-5 rounded-md m-2 grid grid-cols-6 hover:bg-blue-600 hover:shadow-md transition ">
+                    <img src="./resources/statistics.png" alt="Confirmed" width="500px" class="col-span-1 animate-scale">
+                    <div id="confirmed" class="grid place-content-center col-span-5 "></div>
+                </div>
+                <div id="recoveredCases" class="bg-green-500 p-5 rounded-md m-2 grid grid-cols-6 hover:bg-green-600 transition">
+                    <img src="./resources/heart.png" alt="Recovered" class="animate-wiggle">
+                    <div id="recovered" class="grid place-content-center col-span-5"></div>
+                </div>
+                <div id="activeCases" class="bg-yellow-500 p-5 rounded-md m-2 grid grid-cols-6 hover:bg-yellow-600 transition">
+                    <img src="./resources/virus.png" alt="Active" class="animate-spin-slow">
+                    <div id="active" class="grid place-content-center col-span-5"></div>
+                </div>
+                <div id="deathCases" class="bg-red-500 p-5 rounded-md m-2 grid grid-cols-6 hover:bg-red-600 transition hover:scale-110">
+                    <img src="./resources/devil.png" alt="Death" class="animate-pulse">
+                    <div id="death" class="grid place-content-center col-span-5 "></div>
+                </div>
+            </div>
+        </div>
+        <div class="font-bold mb-5">
+            <div class="grid grid-cols-4 gap-4 text-white">
+                <button id="get" class="bg-blue-500 p-5 my-10 cursor-pointer hover:bg-blue-800 rounded-md transition hover:shadow-lg focus:outline-none">GET</button>
+                <button id="post" class="bg-green-500 p-5 my-10 cursor-pointer hover:bg-green-800 rounded-md transition disabled:opacity-50 hover:shadow-lg focus:outline-none" disabled>POST</button>
+                <button id="patch" class="bg-yellow-500 p-5 my-10 cursor-pointer hover:bg-yellow-800 rounded-md transition disabled:opacity-50 hover:shadow-lg focus:outline-none" disabled>PATCH</button>
+                <button id="delete" class="bg-red-500 p-5 my-10 cursor-pointer hover:bg-red-800 rounded-md transition disabled:opacity-50 hover:shadow-lg focus:outline-none" disabled>DELETE</button>
+            </div>
+            <p id="currMethod" class="text-2xl m-3"></p>
+            <p id="describe" class="text-xl"></p><br>
+            <input id="getInput" list="pickCountries" type="text" class="p-3 border-2 focus:outline-none rounded-md m-3 focus:border-green-600 hover:border-green-600 transition">
+            <datalist id="pickCountries"></datalist>
+            <br>
+            <button id="btnSubmit" class="bg-green-300 py-2 px-8 rounded-md hover:bg-green-500 transition font-semibold hover:shadow-lg ">Submit</button>
         </div>
     </div>
     <script src="./app.js" defer></script>
